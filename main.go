@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	asciiArt "ascii-art/ascii-funcs" // Importing custom package for ASCII art functions
+	asciiArt "ascii-art/ascii-funcs-fs" // Importing custom package for ASCII art functions
 )
 
 func main() {
