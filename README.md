@@ -1,6 +1,6 @@
-# Ascii-art Project
+# Ascii-art-fs Project
 
-This project is a Go program that generates ASCII art representations of text strings.
+This project is a Go program that generates ASCII art representations of text strings and output the text to a .txt file.
 
 ## Features
 
@@ -20,59 +20,67 @@ This project is a Go program that generates ASCII art representations of text st
 1. Clone the repository
 
 ```bash
- git clone https://learn.zone01kisumu.ke/git/seodhiambo/ascii-art.git
+ git clone https://learn.zone01kisumu.ke/git/vinomondi/ascii-art-fs
  ```
 2. Navigate to the project directory: 
 ```bash
-cd ascii-art
+cd ascii-art-fs
 ```
 
 ### Usage
 
 - Run the program with a string argument:
 ```bash
-go run . "your_text_here" | cat -e
+$ go run . "hello" standard | cat -e
 ```
 
-  - Example:
-  ```bash
-  user$ go run . "Hello\n" | cat -e
-  ```
-  ```bash
-   _    _          _   _          $
-| |  | |        | | | |         $
-| |__| |   ___  | | | |   ___   $
-|  __  |  / _ \ | | | |  / _ \  $
-| |  | | |  __/ | | | | | (_) | $
-|_|  |_|  \___| |_| |_|  \___/  $
-                                  $
-                                  $
+- Example:
+```bash
+user$ go run . "hello" standard | cat -e
+```
+```bash
+
+ _              _   _          $
+| |            | | | |         $
+| |__     ___  | | | |   ___   $
+|  _ \   / _ \ | | | |  / _ \  $
+| | | | |  __/ | | | | | (_) | $
+|_| |_|  \___| |_| |_|  \___/  $
+                               $
+                               $
 $
   ```
 
-- Use `\n` within the string for manual line breaks:
-
 ```
-user$ go run . "Hello\nWorld!" | cat -e
+go run . "Hello There!" shadow | cat -e
 ```
 ```console
- _    _          _   _          $
-| |  | |        | | | |         $
-| |__| |   ___  | | | |   ___   $
-|  __  |  / _ \ | | | |  / _ \  $
-| |  | | |  __/ | | | | | (_) | $
-|_|  |_|  \___| |_| |_|  \___/  $
-                                $
-                                $
-__          __                 _       _   _  $
-\ \        / /                | |     | | | | $
- \ \  /\  / /    ___    _ __  | |   __| | | | $
-  \ \/  \/ /    / _ \  | '__| | |  / _` | | | $
-   \  /\  /    | (_) | | |    | | | (_| | |_| $
-    \/  \/      \___/  |_|    |_|  \__,_| (_) $
-                                              $
-                                              $
+                                                                                         $
+_|    _|          _| _|                _|_|_|_|_| _|                                  _| $
+_|    _|   _|_|   _| _|   _|_|             _|     _|_|_|     _|_|   _|  _|_|   _|_|   _| $
+_|_|_|_| _|_|_|_| _| _| _|    _|           _|     _|    _| _|_|_|_| _|_|     _|_|_|_| _| $
+_|    _| _|       _| _| _|    _|           _|     _|    _| _|       _|       _|          $
+_|    _|   _|_|_| _| _|   _|_|             _|     _|    _|   _|_|_| _|         _|_|_| _| $
+                                                                                         $
+                                                                                         $
+$
+  ```
+
 ```
+$ go run . "Hello There!" thinkertoy | cat -e
+```
+```
+                                                $
+o  o     o o           o-O-o o                o $
+|  |     | |             |   |                | $
+O--O o-o | | o-o         |   O--o o-o o-o o-o o $
+|  | |-' | | | |         |   |  | |-' |   |-'   $
+o  o o-o o o o-o         o   o  o o-o o   o-o O $
+                                                $
+                                                $
+$
+```
+
 
 - Special characters can be escaped using `\`: `go run . "Special chars: \\n \\t"`
 
