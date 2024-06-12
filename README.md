@@ -113,6 +113,6 @@ This project is licensed under the MIT License.
 - The Go programming language community.
 - The creators of the various banner files used in this project.
 - Group Contributors:
-    - vinomondi
-    - coketch
-    - seodhiambo
+    - Vincent Omondi
+    - Stella Oiro
+    - Seth Odhiambo
