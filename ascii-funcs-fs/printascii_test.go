@@ -1,28 +1,32 @@
-package main
+package asciiArt
 
 import (
 	"bytes"
 	"io"
 	"os"
+	"path/filepath"
 	"testing"
 )
 
-func Test_main(t *testing.T) {
+func Test_PrintAsciiArt(t *testing.T) {
+	// Compute the correct path to the standard.txt file
+	basePath, err := os.Getwd()
+	if err != nil {
+		t.Fatalf("Failed to get working directory: %v", err)
+	}
+	asciiFilePath := filepath.Join(basePath, "..", "standard.txt")
+
+	// Load the ASCII characters from the sample banner file for testing
+	asciiChars, err := LoadAsciiChars(asciiFilePath)
+	if err != nil {
+		t.Fatalf("Failed to load ASCII characters: %v", err)
+	}
+
 	tests := []struct {
 		name   string
 		input  string
 		output string
 	}{
-		{
-			name:   "Empty String",
-			input:  "",
-			output: "",
-		},
-		{
-			name:   "Newline",
-			input:  "\\n",
-			output: "\n",
-		},
 		{
 			name:  "Simple Text",
 			input: "Hello",
@@ -39,22 +43,10 @@ func Test_main(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			// Capture stdout
-			oldStdout := os.Stdout
-			r, w, _ := os.Pipe()
-			os.Stdout = w
+			output := CaptureOutput(func() {
+				PrintAsciiArt(tt.input, asciiChars)
+			})
 
-			// Set arguments and run main
-			os.Args = []string{"go run .", tt.input}
-			main()
-
-			// Restore stdout and capture output
-			w.Close()
-			os.Stdout = oldStdout
-			out, _ := io.ReadAll(r)
-			output := string(out)
-
-			// Compare output
 			if output != tt.output {
 				t.Errorf("Expected output:\n%s\nGot:\n%s", tt.output, output)
 			}

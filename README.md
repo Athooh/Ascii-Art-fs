@@ -98,7 +98,7 @@ $
 
 - Implement options for choosing specific banner files.
 - Allow customization of the output size.
-- Add support for colorized ASCII art.
+- Add detailed support for colorized ASCII art.
 
 ## Contributing
 
@@ -106,13 +106,14 @@ Contributions are welcome! Please feel free to submit pull requests for bug fixe
 
 ## License
 
-This project is licensed under the MIT License.
+The project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
 - The Go programming language community.
 - The creators of the various banner files used in this project.
 - Group Contributors:
-    - Vincent Omondi
-    - Stella Oiro
-    - Seth Odhiambo
+  @vinomondi
+  @steoiro
+  @seodhiambo
+

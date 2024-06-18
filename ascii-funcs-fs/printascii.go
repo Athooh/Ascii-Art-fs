@@ -8,12 +8,12 @@ import (
 // ReplaceSpecChars replaces escape sequences with their corresponding special characters.
 func ReplaceSpecChars(s string) string {
 	replace := strings.NewReplacer(
-		"\\r", "\r", // Replace '\r' with carriage return
-		"\\b", "\b", // Replace '\b' with backspace
-		"\\t", "    ", // Replace '\t' with four spaces
-		"\\f", "\f", // Replace '\f' with form feed
-		"\\a", "\a", // Replace '\a' with alert (bell)
-		"\\v", "\v", // Replace '\v' with vertical tab
+		"\\r", "\r", 
+		"\\b", "\b", 
+		"\\t", "    ", 
+		"\\f", "\f", 
+		"\\a", "\a", 
+		"\\v", "\v",
 	)
 	return replace.Replace(s)
 }

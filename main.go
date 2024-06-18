@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	asciiArt "ascii-art/ascii-funcs-fs" // Importing custom package for ASCII art functions
+	asciiArt "ascii-art/ascii-funcs-fs"
 )
 
 func main() {
@@ -18,11 +18,13 @@ func main() {
 		text := os.Args[1]
 		banner := strings.ToLower(os.Args[2])
 
-		asciiChars, err := asciiArt.LoadAsciiChars(banner + ".txt") // Load ASCII characters from the specified file
+		// Load ASCII characters from the specified file
+		asciiChars, err := asciiArt.LoadAsciiChars(banner + ".txt")
 		if err != nil {
-			fmt.Println("Error!: Did you mean 'thinkertoy or 'shadow' or 'standard?'", err) // Print error message and suggestion
-			return                                                                          // Exit the program if there's an error
+			fmt.Println("Error!: Did you mean 'thinkertoy or 'shadow' or 'standard?'", err)
+			return
 		}
-		asciiArt.ProcessArguments(text, asciiChars) // Process the first command-line argument with loaded ASCII characters
+		// Process the first command-line argument with loaded ASCII characters
+		asciiArt.ProcessArguments(text, asciiChars)
 	}
 }
